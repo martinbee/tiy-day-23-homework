@@ -1,0 +1,8 @@
+<h2>Choose A Post!</h2>
+<% @published_posts.each do |post| %>
+  <li>
+    <%= link_to post.title, [:post, id: post.id] %>
+    <p>Preview: <%= truncate(post.body) %></p>
+    <p>Published On: <%= post.published_on %></p>
+  </li>
+<% end %>
