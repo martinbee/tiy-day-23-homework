@@ -1,8 +1,16 @@
-<h2>Choose A Post!</h2>
-<% @published_posts.each do |post| %>
-  <li>
-    <%= link_to post.title, [:post, id: post.id] %>
-    <p>Preview: <%= truncate(post.body) %></p>
-    <p>Published On: <%= post.published_on %></p>
-  </li>
+<h1>Zen Koans</h1>
+<br>
+<h2>Koans:</h2>
+<%= link_to "Add Post", :new_post %>
+<br>
+<% @posts.each do |post| %>
+  <br>
+  <div class="post">
+    <li>
+      <%= link_to post.title, [:post, id: post.id], :class => "title-link" %>
+      <%= link_to "Edit Koan", [:edit_post, id: post.id] %>
+      <p>Preview: <%= truncate(post.body) %></p>
+      <p>Published On: <%= post.published_on %></p>
+    </li>
+  </div>
 <% end %>

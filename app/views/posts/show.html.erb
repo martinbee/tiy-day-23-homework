@@ -1,2 +1,12 @@
+<%= link_to "Home", :root %>
+
 <h1><%= @post.title %> </h1>
+<br>
 <p><%= @post.body %></p>
+<br>
+<p>Published On: <%= @post.published_on %></p>
+<br>
+<%= link_to "Edit Koan", [:edit_post, id: @post.id] %>
+<p>
+  <%= link_to 'Delete Koan', :post, method: 'delete', data: {confirm: 'Are you sure?'}%>
+</p>
